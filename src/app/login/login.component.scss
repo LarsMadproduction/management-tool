@@ -1,7 +1,75 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-// section {
-//   @include flex-center;
-//   padding: $padding16;
-// }
+section {
+  position: relative;
+  @include flex-center;
+  height: 100svh;
+  padding-inline: $padding-sm;
+  .login-container {
+    @include flex-box;
+    gap: $gap-md;
+    width: 464px;
+    background-color: $light-background-color;
+    border-radius: $border-radius-sm;
+    padding: $padding-md;
+  }
+}
+
+.branding-dark {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+}
+
+form {
+  @include flex-box;
+  width: 100%;
+  gap: $gap-md;
+}
+
+.input-wrapper {
+  position: relative;
+  @include flex-center;
+  width: 100%;
+  input {
+    padding-right: 48px;
+  }
+}
+
+.email-wrapper {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+}
+
+.lock-wrapper {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  &:hover {
+    background-color: $light-background-color;
+    border-radius: 100%;
+    padding: 4px;
+  }
+}
+
+.input-icon {
+  position: absolute;
+  right: 16px;
+}
+
+.lock {
+  cursor: pointer;
+}
+
+.submit {
+  width: 100px;
+  background-color: $primary-color;
+  color: $default-color;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
