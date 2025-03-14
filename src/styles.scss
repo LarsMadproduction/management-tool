@@ -34,6 +34,13 @@ input {
   font-size: $font-size-md;
   padding-inline: $padding-sm;
   border-radius: 24px;
+  &:hover{
+    border: 1px solid $background-color;
+  }
+  &:focus{
+    outline-style: none;
+    border: 1px solid $primary-color;
+  }
 }
 
 .d-none {
