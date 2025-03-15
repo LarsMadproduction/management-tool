@@ -1,0 +1,24 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+section {
+  position: relative;
+  overflow: hidden;
+  @include flex-center;
+  background-color: $primary-color;
+}
+
+.branding {
+  position: absolute;
+  z-index: 2;
+}
+
+.bg-arrow {
+  height: 100svh;
+  transition: opacity 0.5s ease-in-out, transform 3s ease-in-out;
+}
+
+.bg-arrow.animated {
+  transform: scale(5);
+  pointer-events: none;
+}
