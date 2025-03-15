@@ -43,6 +43,20 @@ input {
   }
 }
 
+.input-wrapper {
+    position: relative;
+    @include flex-center;
+    width: 100%;
+    input {
+      padding-right: 48px;
+    }
+  }
+
+.input-icon {
+    position: absolute;
+    right: 16px;
+  }
+
 .d-none {
   display: none;
 }

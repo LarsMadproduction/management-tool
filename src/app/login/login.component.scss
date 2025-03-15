@@ -28,15 +28,6 @@ form {
   gap: $gap-md;
 }
 
-.input-wrapper {
-  position: relative;
-  @include flex-center;
-  width: 100%;
-  input {
-    padding-right: 48px;
-  }
-}
-
 .email-wrapper {
   @include flex-center;
   width: 40px;
@@ -52,11 +43,6 @@ form {
     border-radius: 100%;
     padding: 4px;
   }
-}
-
-.input-icon {
-  position: absolute;
-  right: 16px;
 }
 
 .lock {
