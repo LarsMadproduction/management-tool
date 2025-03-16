@@ -2,8 +2,12 @@
 @use "mixins" as *;
 
 section {
+  position: absolute;
+  top: 0;
+  left: 0;
   @include flex-between;
   height: 100px;
+  width: 100vw;
   padding-inline: $padding-sm;
   box-shadow: $box-shadow-main;
   gap: $gap-sm;
