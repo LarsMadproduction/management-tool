@@ -20,11 +20,11 @@ export const routes: Routes = [
         loadComponent: () => import('./features/news/news.component').then(m => m.NewsComponent) 
       },
       { 
-        path: 'profile', 
+        path: 'participants', 
         loadComponent: () => import('./features/participants/participants.component').then(m => m.ParticipantsComponent) 
       },
       { 
-        path: 'settings', 
+        path: 'evaluation', 
         loadComponent: () => import('./features/evaluation/evaluation.component').then(m => m.EvaluationComponent) 
       },
     ]
