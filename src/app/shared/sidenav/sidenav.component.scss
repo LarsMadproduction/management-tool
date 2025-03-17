@@ -12,19 +12,55 @@ section {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 li {
-  padding-block: $padding-sm;
+  @include flex-between;
+  flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid $primary-color;
+
   &:hover {
     background: $light-background-color;
-    border-bottom: unset;
+    border-bottom: 1px solid transparent;
   }
+}
+
+.category-item {
+  @include flex-between;
+  width: 100%;
 }
 
 span {
   font-size: $font-size-sm;
-  padding-inline: $padding-sm;
+  padding: $padding-sm;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+  margin-right: 16px;
+  transition: transform 0.3s ease-in-out;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.selected {
+  background-color: $light-background-color;
+  padding-bottom: 0;
+}
+
+.sublist {
+align-items: flex-start;
+  background-color: $light-background-color;
+  width: 250px;
+  &:hover {
+    background-color: $default-color;
+  }
+}
+.subItem{
+    width: 100%;
 }
