@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,22 +10,16 @@ import { Component } from '@angular/core';
   styleUrl: './sidenav.component.scss',
 })
 export class SidenavComponent {
+  constructor(private router: Router) {}
   categoryList: string[] = [
     'Neuigkeiten',
-    'Teilnehmer Listen',
+    'Teilnehmer-Listen',
     'Bewertung',
     'Gewerk',
     'Firmen',
   ];
 
-  years: string[] = [
-    'Jahrgang: 2025',
-    'Jahrgang: 2024',
-    'Jahrgang: 2023',
-    'Jahrgang: 2022',
-    'Jahrgang: 2021',
-    'Jahrgang: 2020',
-  ];
+  years: string[] = ['2025', '2024', '2023', '2022', '2021', '2020'];
 
   trades: string[] = [
     'Mauerer',
@@ -46,7 +41,7 @@ export class SidenavComponent {
   }
 
   getSublist(category: string): string[] {
-    if (category === 'Teilnehmer Listen') return this.years;
+    if (category === 'Teilnehmer-Listen') return this.years;
     if (category === 'Gewerk') return this.trades;
     if (category === 'Firmen') return this.companies;
     return [];
@@ -54,13 +49,19 @@ export class SidenavComponent {
 
   openCategory(category: string): void {
     console.log(`Kategorie "${category}" wurde geöffnet.`);
+    this.router.navigate([`/app/${category}`]);
   }
 
   isToggleCategory(category: string): boolean {
     return (
-      category === 'Teilnehmer Listen' ||
+      category === 'Teilnehmer-Listen' ||
       category === 'Gewerk' ||
       category === 'Firmen'
     );
+  }
+
+  openSubCategory(category: string, item: string) {
+    console.log(`Kategorie "${item}" wurde geöffnet.`);
+    this.router.navigate([`/app/${category}`, item]);
   }
 }

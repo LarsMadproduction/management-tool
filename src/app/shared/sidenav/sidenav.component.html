@@ -26,8 +26,8 @@
         </svg>
       </div>
       <ul *ngIf="expandedCategories[category]">
-        <li class="sublist" *ngFor="let subItem of getSublist(category)">
-          <span class="subItem" (click)="openCategory(subItem)">{{ subItem }}</span>
+        <li class="sublist" *ngFor="let item of getSublist(category)">
+          <span class="subItem" (click)="openSubCategory(category, item)">{{ item }}</span>
         </li>
       </ul>
     </li>
