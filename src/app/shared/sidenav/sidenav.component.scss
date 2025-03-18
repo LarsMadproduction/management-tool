@@ -54,13 +54,18 @@ svg {
   width: 0px;
 }
 
-.selected {
+.list-selected {
   background-color: $light-background-color;
   padding-bottom: 0;
   border-bottom: 1px solid transparent;
   &:hover {
     border-bottom: 1px solid $primary-color;
   }
+}
+
+.category-selected{
+  background-color: $light-background-color;
+  border-bottom: 1px solid transparent;
 }
 
 .sublist {
@@ -71,6 +76,12 @@ svg {
     background-color: $default-color;
   }
 }
+
+.sublist-selected{
+  background-color: $default-color;
+  border-bottom: 1px solid transparent;
+}
+
 .subItem {
   width: 100%;
 }

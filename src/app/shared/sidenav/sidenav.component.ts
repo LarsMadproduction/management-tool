@@ -34,6 +34,13 @@ export class SidenavComponent {
 
   expandedCategories: { [key: string]: boolean } = {};
 
+  isSelected: { [key: string]: boolean } = {};
+
+  ngOnInit() {
+    this.isSelected['Neuigkeiten'] = true;
+    console.log(this.isSelected['Neuigkeiten']);
+  }
+
   toggleSublist(category: string): void {
     if (this.isToggleCategory(category)) {
       this.expandedCategories[category] = !this.expandedCategories[category];
@@ -48,7 +55,7 @@ export class SidenavComponent {
   }
 
   openCategory(category: string): void {
-    console.log(`Kategorie "${category}" wurde geöffnet.`);
+    this.isSelected[category] = !this.isSelected[category];
     this.router.navigate([`/app/${category}`]);
   }
 
@@ -61,7 +68,7 @@ export class SidenavComponent {
   }
 
   openSubCategory(category: string, item: string) {
-    console.log(`Kategorie "${item}" wurde geöffnet.`);
+    this.isSelected[item] = !this.isSelected[item];
     this.router.navigate([`/app/${category}`, item]);
   }
 }

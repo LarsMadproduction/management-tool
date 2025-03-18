@@ -2,7 +2,8 @@
   <ul>
     <li
       *ngFor="let category of categoryList"
-      [class.selected]="expandedCategories[category]"
+      [class.list-selected]="expandedCategories[category]"
+      [class.category-selected]="isSelected[category]"
     >
       <div
         class="category-item"
@@ -26,8 +27,14 @@
         </svg>
       </div>
       <ul *ngIf="expandedCategories[category]">
-        <li class="sublist" *ngFor="let item of getSublist(category)">
-          <span class="subItem" (click)="openSubCategory(category, item)">{{ item }}</span>
+        <li
+          class="sublist"
+          *ngFor="let item of getSublist(category)"
+          [class.sublist-selected]="isSelected[item]"
+        >
+          <span class="subItem" (click)="openSubCategory(category, item)">{{
+            item
+          }}</span>
         </li>
       </ul>
     </li>
