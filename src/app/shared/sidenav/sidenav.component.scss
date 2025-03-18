@@ -8,6 +8,8 @@ section {
   height: calc(100svh - 100px);
   width: 250px;
   background-color: $default-color;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 ul {
@@ -46,6 +48,10 @@ svg {
   &.expanded {
     transform: rotate(180deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .selected {

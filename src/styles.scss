@@ -35,33 +35,49 @@ input {
   font-size: $font-size-md;
   padding-inline: $padding-sm;
   border-radius: 24px;
-  &:hover{
+  &:hover {
     border: 1px solid $background-color;
   }
-  &:focus{
+  &:focus {
     outline-style: none;
     border: 1px solid $primary-color;
   }
 }
 
-.content-wrapper{
-    height: calc(100svh - 100px);
-    margin-top: 100px;
+.content-wrapper {
+  height: calc(100svh - 100px);
+  margin-top: 100px;
 }
 
 .input-wrapper {
-    position: relative;
-    @include flex-center;
-    width: 100%;
-    input {
-      padding-right: 48px;
-    }
+  position: relative;
+  @include flex-center;
+  width: 100%;
+  input {
+    padding-right: 48px;
   }
+}
 
 .input-icon {
-    position: absolute;
-    right: 16px;
-  }
+  position: absolute;
+  right: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $light-background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}
 
 .d-none {
   display: none;
