@@ -27,7 +27,7 @@
       </div>
       <ul *ngIf="expandedCategories[category]">
         <li class="sublist" *ngFor="let subItem of getSublist(category)">
-          <span class="subItem" (click)="openSubitem(subItem)">{{ subItem }}</span>
+          <span class="subItem" (click)="openCategory(subItem)">{{ subItem }}</span>
         </li>
       </ul>
     </li>

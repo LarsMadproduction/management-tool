@@ -17,7 +17,14 @@ export class SidenavComponent {
     'Firmen',
   ];
 
-  years: string[] = ['2025', '2024', '2023', '2022', '2021', '2020'];
+  years: string[] = [
+    'Jahrgang: 2025',
+    'Jahrgang: 2024',
+    'Jahrgang: 2023',
+    'Jahrgang: 2022',
+    'Jahrgang: 2021',
+    'Jahrgang: 2020',
+  ];
 
   trades: string[] = [
     'Mauerer',
@@ -55,8 +62,5 @@ export class SidenavComponent {
       category === 'Gewerk' ||
       category === 'Firmen'
     );
-  }
-  openSubitem(subItem: string): void {
-    console.log(`Kategorie "${subItem}" wurde geöffnet.`);
   }
 }
