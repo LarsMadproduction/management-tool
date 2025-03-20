@@ -10,10 +10,12 @@ $font-size-md: 18px;
 $font-size-lg: 24px;
 $font-size-xl: 32px;
 
+$padding-xs: 8px;
 $padding-sm: 16px;
 $padding-md: 32px;
 $padding-xl: 56px;
 
+$gap-xs: 8px;
 $gap-sm: 16px;
 $gap-md: 32px;
 $gap-xl: 48px;
@@ -34,9 +36,11 @@ $box-shadow-main: 0px 2px 10px rgba(255, 255, 255, 0.5);
   font-size-md: $font-size-md;
   font-size-lg: $font-size-lg;
   font-size-xl: $font-size-xl;
+  padding-xs: $padding-xs;
   padding-sm: $padding-sm;
   padding-md: $padding-md;
   padding-xl: $padding-xl;
+  gap-xs: $gap-xs;
   gap-sm: $gap-sm;
   gap-md: $gap-md;
   gap-xl: $gap-xl;

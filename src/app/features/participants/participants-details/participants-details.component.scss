@@ -1,0 +1,64 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+section {
+  height: calc(100svh - 132px);
+  width: calc(100vw - 282px);
+  padding: $padding-sm;
+  overflow: hidden auto;
+}
+span {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: default;
+}
+
+th {
+  font-size: $font-size-md;
+  font-weight: 600;
+  cursor: default;
+}
+
+table {
+  margin-top: 32px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  table-layout: fixed;
+}
+
+tr {
+  font-size: $font-size-md;
+  font-weight: 400;
+}
+
+.border-left {
+  border-left: 2px solid $primary-color;
+  &:hover {
+    background-color: $default-color;
+  }
+}
+
+.border-right {
+  border-right: 2px solid $primary-color;
+}
+
+.border-r-left {
+  border-top-left-radius: $border-radius-sm;
+  border-bottom-left-radius: $border-radius-sm;
+}
+
+.border-r-right {
+  border-top-right-radius: $border-radius-sm;
+  border-bottom-right-radius: $border-radius-sm;
+}
+
+td {
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+  padding: $padding-xs;
+  text-align: center;
+  background-color: $light-background-color;
+  cursor: pointer;
+}
