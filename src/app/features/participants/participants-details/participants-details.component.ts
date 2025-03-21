@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-participants-details',
@@ -12,6 +11,16 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ParticipantsDetailsComponent {
   item: string = '';
+  filteredParticipants: {
+    company: string;
+    ContactPerson: string;
+    lastname: string;
+    firstname: string;
+    adress: string;
+    zipCode: string;
+    housing: string;
+    year: string;
+  }[] = [];
 
   participantDetails = [
     {
@@ -22,29 +31,49 @@ export class ParticipantsDetailsComponent {
       adress: 'GenhahnerHött 21',
       zipCode: '41189 Mönchengladbach',
       housing: 'Extern',
+      year: '2025',
     },
     {
       company: 'Strabag',
       ContactPerson: 'Ausbilder in Firma',
       lastname: 'Schumacher',
-      firstname: 'Lars',
+      firstname: 'Natascha',
       adress: 'GenhahnerHött 21',
       zipCode: '41189 Mönchengladbach',
       housing: 'Extern',
+      year: '2024',
+    },
+    {
+      company: 'Strabag',
+      ContactPerson: 'Ausbilder in Firma',
+      lastname: 'Schumacher',
+      firstname: 'Johanna',
+      adress: 'GenhahnerHött 21',
+      zipCode: '41189 Mönchengladbach',
+      housing: 'Extern',
+      year: '2023',
+    },    {
+      company: 'Strabag',
+      ContactPerson: 'Ausbilder in Firma',
+      lastname: 'Schumacher',
+      firstname: 'Jonas',
+      adress: 'GenhahnerHött 21',
+      zipCode: '41189 Mönchengladbach',
+      housing: 'Extern',
+      year: '2022',
     },
   ];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.paramMap
-      .pipe(
-        switchMap((params) => {
-          this.item = params.get('item') || 'Kein Wert gefunden';
-          console.log('Selected Item:', this.item);
-          return [];
-        })
-      )
-      .subscribe();
+    this.route.paramMap.subscribe((params) => {
+      this.item = params.get('item') || 'Kein Wert gefunden';
+      console.log('Selected Item:', this.item);
+
+      this.filteredParticipants = this.participantDetails.filter(
+        (participant) => participant.year === this.item
+      );
+    });
   }
 }
