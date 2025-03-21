@@ -63,23 +63,29 @@ svg {
   }
 }
 
-.category-selected{
+.category-selected {
   background-color: $light-background-color;
   border-bottom: 1px solid transparent;
+  font-weight: 800;
 }
 
 .sublist {
   align-items: flex-start;
   background-color: $light-background-color;
   width: 190px;
+  font-weight: 400;
+  span {
+    margin-left: 16px;
+  }
   &:hover {
     background-color: $default-color;
   }
 }
 
-.sublist-selected{
+.sublist-selected {
   background-color: $default-color;
   border-bottom: 1px solid transparent;
+  font-weight: 800;
 }
 
 .subItem {
