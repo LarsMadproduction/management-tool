@@ -55,7 +55,19 @@ export class SidenavComponent {
   }
 
   openCategory(category: string): void {
-    this.isSelected[category] = !this.isSelected[category];
+    Object.keys(this.isSelected).forEach(
+      (key) => (this.isSelected[key] = false)
+    );
+    Object.keys(this.expandedCategories).forEach(
+      (key) => (this.expandedCategories[key] = false)
+    );
+
+    if (this.isToggleCategory(category)) {
+      this.expandedCategories[category] = true;
+    }
+
+    this.isSelected[category] = true;
+    this.isSelected['category-selected'] = true;
     this.router.navigate([`/app/${category}`]);
   }
 
@@ -68,7 +80,18 @@ export class SidenavComponent {
   }
 
   openSubCategory(category: string, item: string) {
-    this.isSelected[item] = !this.isSelected[item];
+    Object.keys(this.isSelected).forEach(
+      (key) => (this.isSelected[key] = false)
+    );
+    Object.keys(this.expandedCategories).forEach(
+      (key) => (this.expandedCategories[key] = false)
+    );
+
+    this.isSelected['category-selected'] = true;
+    this.isSelected[category] = true;
+    this.isSelected[item] = true;
+    this.expandedCategories[category] = true;
+
     this.router.navigate([`/app/${category}`, item]);
   }
 }
