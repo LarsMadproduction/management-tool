@@ -6,7 +6,7 @@ section {
   top: 0;
   left: 0;
   height: calc(100svh - 100px);
-  width: 250px;
+  width: 190px;
   background-color: $default-color;
   overflow-y: auto;
   overflow-x: hidden;
@@ -71,7 +71,7 @@ svg {
 .sublist {
   align-items: flex-start;
   background-color: $light-background-color;
-  width: 250px;
+  width: 190px;
   &:hover {
     background-color: $default-color;
   }

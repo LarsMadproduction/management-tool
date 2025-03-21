@@ -3,10 +3,11 @@
 
 section {
   height: calc(100svh - 132px);
-  width: calc(100vw - 282px);
+  width: calc(100vw - 222px);
   padding: $padding-sm;
   overflow: hidden auto;
 }
+
 span {
   font-size: $font-size-xl;
   font-weight: 800;
@@ -61,4 +62,28 @@ td {
   text-align: center;
   background-color: $light-background-color;
   cursor: pointer;
+}
+
+@media (max-width:1200px){
+    tr {
+        font-size: $font-size-sm;
+        font-weight: 400;
+      }
+}
+
+@media (max-width:1024px){
+    section {
+
+        padding: $padding-xs;
+      }
+
+    tr {
+        font-size: $font-size-xs;
+        font-weight: 400;
+      }
+      td {
+
+        padding: $padding-xs 0;
+        overflow: hidden;
+      }
 }
