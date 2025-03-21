@@ -24,7 +24,8 @@ export class ParticipantsDetailsComponent {
 
   participantDetails = [
     {
-      company: 'Strabag',
+      company: 'STRABAG AG',
+      companyAdress: 'Siegburger Str. 241 50679 Köln',
       ContactPerson: 'Ausbilder in Firma',
       lastname: 'Schumacher',
       firstname: 'Lars',
@@ -52,7 +53,8 @@ export class ParticipantsDetailsComponent {
       zipCode: '41189 Mönchengladbach',
       housing: 'Extern',
       year: '2023',
-    },    {
+    },
+    {
       company: 'Strabag',
       ContactPerson: 'Ausbilder in Firma',
       lastname: 'Schumacher',
