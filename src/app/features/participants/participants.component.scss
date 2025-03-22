@@ -1,9 +1,0 @@
-@use "variables" as *;
-@use "mixins" as *;
-
-section {
-  height: calc(100svh - 100px);
-  width: calc(100vw - 190px);
-  margin-left: 190px;
-  padding: $padding-sm;
-}
