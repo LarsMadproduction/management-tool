@@ -11,18 +11,10 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent {
   constructor(private router: Router) {}
-  categoryList: string[] = [
-    'Neuigkeiten',
-    'Teilnehmer-Listen',
-    'Bewertung',
-    'Gewerk',
-    'Firmen',
-  ];
-
-  years: string[] = ['2025', '2024', '2023', '2022', '2021', '2020'];
+  categoryList: string[] = ['Neuigkeiten', 'Bewertung', 'Gewerk', 'Firmen'];
 
   trades: string[] = [
-    'Mauerer',
+    'Maurer',
     'Betonbauer',
     'Holzbauer',
     'Straßenbauer',
@@ -38,7 +30,6 @@ export class SidenavComponent {
 
   ngOnInit() {
     this.isSelected['Neuigkeiten'] = true;
-    console.log(this.isSelected['Neuigkeiten']);
   }
 
   toggleSublist(category: string): void {
@@ -48,7 +39,6 @@ export class SidenavComponent {
   }
 
   getSublist(category: string): string[] {
-    if (category === 'Teilnehmer-Listen') return this.years;
     if (category === 'Gewerk') return this.trades;
     if (category === 'Firmen') return this.companies;
     return [];
@@ -72,11 +62,7 @@ export class SidenavComponent {
   }
 
   isToggleCategory(category: string): boolean {
-    return (
-      category === 'Teilnehmer-Listen' ||
-      category === 'Gewerk' ||
-      category === 'Firmen'
-    );
+    return category === 'Gewerk' || category === 'Firmen';
   }
 
   openSubCategory(category: string, item: string) {

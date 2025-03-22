@@ -1,1 +1,12 @@
-<p>Gewerk: {{ item }}</p>
+<section>
+  <span>Gewerk: {{ item }}</span>
+  <div class="years-wrapper">
+    <div
+      *ngFor="let year of years"
+      class="year-container"
+      (click)="openList(year)"
+    >
+      Jahrgang: {{ year }}
+    </div>
+  </div>
+</section>

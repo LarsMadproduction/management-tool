@@ -1,0 +1,37 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+section {
+  height: calc(100svh - 132px);
+  width: calc(100vw - 222px);
+  margin-left: 206px;
+  margin-top: 116px;
+  padding: $padding-sm;
+  overflow: hidden auto;
+}
+
+span {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.years-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-xs;
+  margin-top: 32px;
+}
+
+.year-container {
+  @include flex-center;
+  width: 250px;
+  height: 250px;
+  border-radius: $border-radius-sm;
+  background-color: $light-background-color;
+  cursor: pointer;
+  &:hover {
+    background-color: $default-color;
+  }
+}
