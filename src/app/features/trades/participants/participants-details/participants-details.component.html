@@ -1,0 +1,25 @@
+<section>
+  <span>Jahrgang: {{ year }}</span>
+  <table>
+    <thead>
+      <tr>
+        <th>Firma</th>
+        <th>Nachname</th>
+        <th>Name</th>
+        <th>PLZ/Ort</th>
+        <th>Unterbringung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let participant of filteredParticipants">
+        <td class="border-left border-r-left">{{ participant.company }}</td>
+        <td class="border-left">{{ participant.lastname }}</td>
+        <td class="border-left">{{ participant.firstname }}</td>
+        <td class="border-left">{{ participant.zipCode }}</td>
+        <td class="border-left border-right border-r-right">
+          {{ participant.housing }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
